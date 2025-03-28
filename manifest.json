@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Facebook Only",
+    "version": "1.0",
+    "permissions": [
+        "storage",
+        "declarativeNetRequest"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "background": {
+        "service_worker": "core/background.js"
+    },
+    "action": {
+        "default_popup": "popup/popup.html",
+        "default_icon": {
+            "16": "public/icons/favicon.ico",
+            "48": "public/icons/favicon.ico",
+            "128": "public/icons/favicon.ico"
+        }
+    },
+    "declarative_net_request": {
+        "rule_resources": [
+            {
+                "id": "block_rules",
+                "enabled": true,
+                "path": "core/rules.json"
+            }
+        ]
+    }
+}

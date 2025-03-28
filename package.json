@@ -1,0 +1,15 @@
+{
+    "name": "imphnen-ext",
+    "module": "index.ts",
+    "type": "module",
+    "scripts": {
+        "build": "bun build src/core/background.ts --outdir dist/core && bun build src/popup/popup.ts --outdir dist/popup"
+    },
+    "devDependencies": {
+        "@types/bun": "latest",
+        "@types/chrome": "^0.0.313"
+    },
+    "peerDependencies": {
+        "typescript": "^5.0.0"
+    }
+}
