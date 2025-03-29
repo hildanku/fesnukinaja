@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Facebook Only",
+    "name": "FesnukinAja",
     "version": "1.0",
     "permissions": [
         "storage",
@@ -10,14 +10,14 @@
         "<all_urls>"
     ],
     "background": {
-        "service_worker": "core/background.js"
+        "service_worker": "background.js"
     },
     "action": {
-        "default_popup": "popup/popup.html",
+        "default_popup": "popup.html",
         "default_icon": {
-            "16": "public/icons/favicon.ico",
-            "48": "public/icons/favicon.ico",
-            "128": "public/icons/favicon.ico"
+            "16": "imphnen.jpg",
+            "48": "imphnen.jpg",
+            "128": "imphnen.jpg"
         }
     },
     "declarative_net_request": {
@@ -25,7 +25,7 @@
             {
                 "id": "block_rules",
                 "enabled": true,
-                "path": "core/rules.json"
+                "path": "rules.json"
             }
         ]
     }
