@@ -22,22 +22,22 @@ function updateRules(enable: boolean) {
                     id: 1,
                     priority: 1,
                     action: {
-                        type: 'block'
+                        type: chrome.declarativeNetRequest.RuleActionType.BLOCK
                     },
                     condition: {
                         urlFilter: '*',
-                        resourceTypes: ['main_frame']
+                        resourceTypes: [chrome.declarativeNetRequest.ResourceType.MAIN_FRAME]
                     }
                 },
                 {
                     id: 2,
                     priority: 2,
                     action: {
-                        type: 'allow'
+                        type: chrome.declarativeNetRequest.RuleActionType.ALLOW
                     },
                     condition: {
                         urlFilter: 'facebook.com',
-                        resourceTypes: ['main_frame']
+                        resourceTypes: [chrome.declarativeNetRequest.ResourceType.MAIN_FRAME]
                     }
                 }
             ]
