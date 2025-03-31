@@ -4,35 +4,99 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FESNUK PRODUCTIVITY</title>
+
+    <!-- External Styles -->
     <link rel="stylesheet" href="popup.css" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
   </head>
   <body>
-    <header>
-      <h2>Boost Your Productivity</h2>
-    </header>
+    <div class="container">
+      <!-- HEADER -->
+      <header>
+        <div class="logo">
+          <i class="fab fa-facebook fa-2x" style="color: #1877f2"></i>
+          <i class="fas fa-check-circle fa-2x" style="color: #4caf50"></i>
+        </div>
+        <h2>Ngoding ya Facenuk</h2>
+      </header>
 
-    <div class="tri-state-switch">
-      <input type="radio" id="state-off" name="toggle-state" value="off" />
-      <label for="state-off">Off</label>
+      <!-- CONTROL PANEL -->
+      <section class="control-panel">
+        <h3 class="section-title">Select Mode</h3>
 
-      <input type="radio" id="state-block" name="toggle-state" value="block" />
-      <label for="state-block">Block</label>
+        <div class="tri-state-switch" role="radiogroup">
+          <!-- OFF -->
+          <input
+            type="radio"
+            id="state-off"
+            name="toggle-state"
+            value="off"
+            checked
+            aria-label="Off Mode"
+          />
+          <label for="state-off">
+            <span class="icon">🚫</span>
+            <span>Off</span>
+          </label>
 
-      <input
-        type="radio"
-        id="state-redirect"
-        name="toggle-state"
-        value="redirect"
-      />
-      <label for="state-redirect">Redirect</label>
+          <!-- BLOCK -->
+          <input
+            type="radio"
+            id="state-block"
+            name="toggle-state"
+            value="block"
+            aria-label="Block Mode"
+          />
+          <label for="state-block">
+            <span class="icon">🛑</span>
+            <span>Block</span>
+          </label>
 
-      <span class="slider"></span>
+          <!-- REDIRECT -->
+          <input
+            type="radio"
+            id="state-redirect"
+            name="toggle-state"
+            value="redirect"
+            aria-label="Redirect Mode"
+          />
+          <label for="state-redirect">
+            <span class="icon">🔄</span>
+            <span>Redirect</span>
+          </label>
+
+          <!-- Moving Slider -->
+          <span class="slider"></span>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer>
+        <p>
+          Powered by
+          <a
+            href="https://github.com/hildanku/fesnukinaja"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><strong>Imphnen</strong></a
+          >
+        </p>
+        <div class="version">v1.0.0</div>
+      </footer>
     </div>
 
-    <footer>
-      <p>Powered by <strong>Imphnen</strong></p>
-    </footer>
-
-    <script type="module" src="popup.js"></script>
+    <!-- External Script -->
+    <script type="module" src="popup.ts"></script>
   </body>
 </html>
