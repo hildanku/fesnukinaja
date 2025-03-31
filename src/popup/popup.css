@@ -1,51 +1,80 @@
 body {
-    width: 200px;
+    width: 220px;
     text-align: center;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.switch {
+header h2 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.tri-state-switch {
     position: relative;
-    display: inline-block;
-    width: 34px;
-    height: 20px;
-    margin-top: 10px;
+    display: flex;
+    width: 100%;
+    height: 36px;
+    margin: 15px auto;
+    border-radius: 18px;
+    background-color: #e0e0e0;
+    overflow: hidden;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+.tri-state-switch input[type="radio"] {
+    display: none;
 }
 
-.slider {
-    position: absolute;
+.tri-state-switch label {
+    flex: 1;
+    text-align: center;
+    line-height: 36px;
+    font-size: 14px;
     cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 20px;
+    z-index: 1;
+    font-weight: bold;
+    color: #666;
+    transition: color 0.3s ease;
 }
 
-.slider:before {
+.tri-state-switch .slider {
     position: absolute;
-    content: "";
-    height: 14px;
-    width: 14px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
+    height: 100%;
+    width: 33.33%;
+    background-color: #b0b0b0;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border-radius: 18px;
+    z-index: 0;
 }
 
-input:checked+.slider {
-    background-color: #4CAF50;
+#state-off:checked~.slider {
+    transform: translateX(0);
+    background-color: #ff4d4d;
 }
 
-input:checked+.slider:before {
-    transform: translateX(14px);
+#state-block:checked~.slider {
+    transform: translateX(100%);
+    background-color: #ffa500;
+}
+
+#state-redirect:checked~.slider {
+    transform: translateX(200%);
+    background-color: #4caf50;
+}
+
+#state-off:checked~label[for="state-off"],
+#state-block:checked~label[for="state-block"],
+#state-redirect:checked~label[for="state-redirect"] {
+    color: white;
+}
+
+footer {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #777;
 }
