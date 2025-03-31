@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FESNUK PRODUCTIVITY</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <h2>Boost Your Productivity</h2>
+    </header>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FESNUK PRODUCTIVITY - IMPHNEN</title>
-    <link rel="stylesheet" href="popup.css">
-</head>
+    <div class="tri-state-switch">
+      <input type="radio" id="state-off" name="toggle-state" value="off" />
+      <label for="state-off">Off</label>
 
-<body>
-    <h2>BOOST YOUR PRODUCTIVITY WITH FESNUKINAJA</h2>
-    <label class="switch">
-        <input type="checkbox" id="toggle">
-        <span class="slider round"></span>
-    </label>
+      <input type="radio" id="state-block" name="toggle-state" value="block" />
+      <label for="state-block">Block</label>
+
+      <input
+        type="radio"
+        id="state-redirect"
+        name="toggle-state"
+        value="redirect"
+      />
+      <label for="state-redirect">Redirect</label>
+
+      <span class="slider"></span>
+    </div>
+
     <footer>
-        <h6>Powered by Imphnen</h6>
+      <p>Powered by <strong>Imphnen</strong></p>
     </footer>
-    <script type="module" src="popup.js"></script>
-</body>
 
+    <script type="module" src="popup.js"></script>
+  </body>
 </html>
