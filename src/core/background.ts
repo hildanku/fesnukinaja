@@ -1,9 +1,9 @@
 chrome.runtime.onInstalled.addListener(() => {
-    chrome.storage.local.set({ mode: 'block' })
+    chrome.storage.local.set({ mode: 'off' })
 })
 
 chrome.storage.local.get(['mode'], (result) => {
-    updateRules(result.mode ?? 'block')
+    updateRules(result.mode ?? 'off')
 })
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
