@@ -28,5 +28,15 @@
                 "path": "rules.json"
             }
         ]
-    }
+    },
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "rules.json"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ]
 }
