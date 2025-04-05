@@ -58,3 +58,6 @@ Ngapain lah gausah, mending scroll fesnuk(eh tapi boleh kok)
 
 1. Tested di Chrome Version 131.0.6778.204 (Official Build) (64-bit)
 2. Recommended pkek Bun yh, klo pke yang lain belum dicb
+
+## Special Thanks to
+[Yappiverse](https://github.com/yappiverse) as a First Contributor
