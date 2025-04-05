@@ -1,51 +1,156 @@
 body {
-    width: 200px;
+    width: 280px;
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6;
+    margin: 0;
+    padding: 0;
+    color: #1f2937;
+}
+
+.container {
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    background: white;
+    transition: all 0.3s ease;
+}
+
+header {
     text-align: center;
-    font-family: Arial, sans-serif;
+    margin-bottom: 20px;
 }
 
-.switch {
+.logo {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+header h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    color: #111827;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: #6b7280;
+    margin: 0;
+    font-weight: 400;
+}
+
+.control-panel {
+    margin: 20px 0;
+}
+
+.tri-state-switch {
     position: relative;
-    display: inline-block;
-    width: 34px;
-    height: 20px;
-    margin-top: 10px;
+    display: flex;
+    width: 100%;
+    height: 42px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: #f3f4f6;
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+.tri-state-switch input[type="radio"] {
+    display: none;
 }
 
-.slider {
-    position: absolute;
+.tri-state-switch label {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 0;
+    font-size: 12px;
     cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 20px;
+    z-index: 1;
+    font-weight: 500;
+    color: #6b7280;
+    transition: all 0.2s ease;
 }
 
-.slider:before {
+.tri-state-switch .icon {
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.tri-state-switch .slider {
     position: absolute;
-    content: "";
-    height: 14px;
-    width: 14px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
+    height: 100%;
+    width: 33.33%;
+    background-color: #4f46e5;
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55), background-color 0.3s ease;
+    border-radius: 8px;
+    z-index: 0;
 }
 
-input:checked+.slider {
-    background-color: #4CAF50;
+#state-off:checked~.slider {
+    transform: translateX(0);
+    background-color: #ef4444;
 }
 
-input:checked+.slider:before {
-    transform: translateX(14px);
+#state-block:checked~.slider {
+    transform: translateX(100%);
+    background-color: #f59e0b;
+}
+
+#state-redirect:checked~.slider {
+    transform: translateX(200%);
+    background-color: #10b981;
+}
+
+#state-off:checked~label[for="state-off"],
+#state-block:checked~label[for="state-block"],
+#state-redirect:checked~label[for="state-redirect"] {
+    color: white;
+    font-weight: 600;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 11px;
+    color: #9ca3af;
+    padding-top: 12px;
+    border-top: 1px solid #e5e7eb;
+}
+
+footer strong {
+    color: #4f46e5;
+    font-weight: 600;
+}
+
+.version {
+    background-color: #e5e7eb;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    color: #6b7280;
+}
+
+footer a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+    color: #4f46e5;
+}
+
+footer a strong {
+    transition: color 0.2s ease;
+}
+
+footer a:hover strong {
+    color: #4f46e5;
 }
